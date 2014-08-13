@@ -1,13 +1,9 @@
 <!DOCTYPE HTML>
 
 <html>
-  <script type="text/javascript" src="public/jquery.min.js"></script>
-  <script type="text/javascript" src="public/buzz.min.js"></script>
-  <script type="text/javascript" src="public/jquery.transit.min.js"></script>
-  <script type="text/javascript" src="public/app.js"></script>
-  <link rel="stylesheet" type="text/css" href="public/stylesheet.css">
-<head>
 
+<head>
+  <link rel="stylesheet" type="text/css" href="public/stylesheet.css">
 </head>
 
 <body>
@@ -15,13 +11,39 @@
     <div id="gamescreen">
       <div id="sky" class="animated">
         <div id="flyarea">
-        <div id="testing">
-         <p> Hello World </p>
+          <div id="ceiling" class="animated"></div>
+          <!-- Flying pipe area container -->
+
+          <div id="player" class="bird animated"></div>
+
+          <div id="bigscore"></div>
+
+          <div id="splash"></div>
+
+           <div id="scoreboard">
+                     <div id="medal"></div>
+                     <div id="currentscore"></div>
+                     <div id="highscore"></div>
+                     <div id="replay"><img src="assets/replay.png" alt="replay"></div>
+            </div>
+
        </div>
-       </div>
+       <div id="land" class="animated"><div id="debug"></div></div>
      </div>
-   <div>
-  <div>
+   </div>
+         <div id="footer">
+         <a href="http://www.dotgears.com/">original game/concept/art by dong nguyen</a>
+         <a href="http://nebezb.com/">recreated by nebez briefkani</a>
+         <a href="http://github.com/nebez/floppybird/">view github project</a>
+      </div>
+      <div class="boundingbox" id="playerbox"></div>
+      <div class="boundingbox" id="pipebox"></div>
+  </div>
+
+<script type="text/javascript" src="public/jquery.min.js"></script>
+<script type="text/javascript" src="public/buzz.min.js"></script>
+<script type="text/javascript" src="public/jquery.transit.min.js"></script>
+<script type="text/javascript" src="public/app.js"></script>
 </body>
 
 </html>
