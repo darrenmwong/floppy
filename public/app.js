@@ -155,5 +155,20 @@ function screenClick()
    }
 }
 
+//Setting Up Scoreboard
+
+function setBigScore(erase)
+{
+   var elemscore = $("#bigscore");
+   elemscore.empty();
+   
+   if(erase)
+      return;
+   
+   var digits = score.toString().split('');
+   for(var i = 0; i < digits.length; i++)
+      elemscore.append("<img src='assets/font_big_" + digits[i] + ".png' alt='" + digits[i] + "'>");
+}
+
 
 
