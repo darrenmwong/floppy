@@ -31,3 +31,10 @@ body {
  -webkit-animation: animSky 7s linear infinite;
    animation: animSky 7s linear infinite;
 }
+
+#flyarea {
+  position:absolute;
+  bottom: 0;
+  height: 420px;
+  width: 100%;
+}
