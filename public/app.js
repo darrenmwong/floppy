@@ -94,3 +94,66 @@ function updatePlayer(player)
    //apply rotation and position
    $(player).css({ rotate: rotation, top: position });
 }
+
+
+
+function startGame()
+{
+   currentstate = states.GameScreen;
+   
+   //fade out the splash
+   $("#splash").stop();
+   $("#splash").transition({ opacity: 0 }, 500, 'ease');
+   
+   //update the big score
+   setBigScore();
+   
+   //debug mode?
+   if(debugmode)
+   {
+      //show the bounding boxes
+      $(".boundingbox").show();
+   }
+
+   //start up our loops
+   var updaterate = 1000.0 / 60.0 ; //60 times a second
+   loopGameloop = setInterval(gameloop, updaterate);
+   loopPipeloop = setInterval(updatePipes, 1400);
+   
+   //jump from the start!
+   playerJump();
+}
+
+//Handle space bar
+$(document).keydown(function(e){
+   //space bar!
+   if(e.keyCode == 32)
+   {
+      //in ScoreScreen, hitting space should click the "replay" button. else it's just a regular spacebar hit
+      if(currentstate == states.ScoreScreen)
+         $("#replay").click();
+      else
+         screenClick();
+   }
+});
+
+//Handle mouse down OR touch start
+if("ontouchstart" in window)
+   $(document).on("touchstart", screenClick);
+else
+   $(document).on("mousedown", screenClick);
+
+function screenClick()
+{
+   if(currentstate == states.GameScreen)
+   {
+      playerJump();
+   }
+   else if(currentstate == states.SplashScreen)
+   {
+      startGame();
+   }
+}
+
+
+
